@@ -2,26 +2,46 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Ensure full height layout with footer at bottom */
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Full viewport height */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Main content area (excluding navbar & footer) */
+.content {
+  flex-grow: 1; /* Ensures content takes up available space */
+  display: flex;
+  background: linear-gradient(135deg, #008080, #FF6F61, #D1C6B9); /* Teal, Coral, Warm Taupe */
+  background-size: 200% 200%;
+  animation: smoothGradient 20s ease infinite; /* Slower and smoother animation */
+  position: relative; /* Positioning for the pattern */
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+/* New animation for a flowing gradient effect */
+@keyframes smoothGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; } /* Transition to other side */
+  100% { background-position: 0% 50%; } /* Return to start */
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+/* Subtle background pattern with dollar signs and content creator symbols */
+.content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="rgba(255, 255, 255, 0.1)"/><text x="10" y="40" font-family="Arial" font-size="20" fill="rgba(255, 255, 255, 0.2)">💰</text><text x="50" y="40" font-family="Arial" font-size="20" fill="rgba(255, 255, 255, 0.2)">🎨</text><text x="10" y="80" font-family="Arial" font-size="20" fill="rgba(255, 255, 255, 0.2)">💡</text></svg>');
+  pointer-events: none; /* Ensures clicks go through the pattern */
+  background-size: 20%; /* Adjust size of the pattern */
+  opacity: 0.5; /* Make pattern subtle */
+}
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
 }
