@@ -1,36 +1,81 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+☕ Get Me A Chai - Crowdfunding Platform
+A full-stack crowdfunding platform that allows creators to receive support from their audience — one chai at a time. Built using Node.js, Express.js, MongoDB, and PayPal, with robust session-based authentication for a secure and seamless experience.
 
-## Getting Started
+📌 Features
+🔐 Secure user authentication using sessions (express-session + MongoDB store)
 
-First, run the development server:
+📣 Create and manage personalized support campaigns
 
-```bash
+💳 Real-time PayPal payment integration
+
+🧾 Transaction logging with fraud detection and validation
+
+📱 Mobile-responsive user interface (ReactJS frontend)
+
+🧩 Modular code architecture with scalable MongoDB schemas
+
+🧑‍💻 Tech Stack
+Layer	Technology
+Frontend	React.js
+Backend	Node.js, Express.js
+Database	MongoDB, Mongoose
+Authentication	express-session, MongoDB session store
+Payment	PayPal REST API
+Tools/DevOps	Postman, GitHub, VS Code
+
+⚙️ Setup & Installation
+1. Clone the repository
+bash
+Copy
+Edit
+git clone https://github.com/aartthh/get-me-a-chai-crowdfunding.git
+cd get-me-a-chai-crowdfunding
+2. Install dependencies
+bash
+Copy
+Edit
+npm install
+3. Set up environment variables
+Create a .env file in the root directory and add:
+
+ini
+Copy
+Edit
+MONGO_URI=<your-mongodb-uri>
+SESSION_SECRET=<your-session-secret>
+PAYPAL_CLIENT_ID=<your-paypal-client-id>
+PAYPAL_CLIENT_SECRET=<your-paypal-client-secret>
+4. Run the application
+bash
+Copy
+Edit
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+The app will be running at: http://localhost:3000
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+✨ Highlights
+Built secure backend routes using Express and middleware for auth-protection
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Designed scalable MongoDB schemas to support high-performance querying
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Integrated PayPal to capture payments and return real-time confirmation
 
-## Learn More
+Implemented logging for each transaction to track contributions
 
-To learn more about Next.js, take a look at the following resources:
+Followed MVC architecture for clean code separation
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+🔒 Authentication
+Users can sign up and log in using email/password credentials
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Sessions are maintained using cookies and stored in MongoDB
 
-## Deploy on Vercel
+Protected routes prevent unauthorized access
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+🧾 Payments with PayPal
+Used PayPal’s RESTful Checkout API for handling donations
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Supporters can donate any amount
+
+Secure redirection and confirmation ensure a reliable user experience
+
+📜 License
+This project is licensed under the MIT License. Feel free to fork and contribute.
