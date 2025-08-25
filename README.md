@@ -37,14 +37,11 @@ Edit
 npm install
 3. Set up environment variables
 Create a .env file in the root directory and add:
-
-ini
-Copy
-Edit
 MONGO_URI=<your-mongodb-uri>
 SESSION_SECRET=<your-session-secret>
 PAYPAL_CLIENT_ID=<your-paypal-client-id>
 PAYPAL_CLIENT_SECRET=<your-paypal-client-secret>
+
 4. Run the application
 bash
 Copy
